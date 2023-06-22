@@ -1006,7 +1006,7 @@
     "name": "com.jhipster.demo.blog.config.package-info"
   },
   {
-    "name": "com.jhipster.demo.blog.domain$User_Accessor_4nyrin"
+    "name": "com.jhipster.demo.blog.domain$User_Accessor_1hwzqk"
   },
   {
     "name": "com.jhipster.demo.blog.domain.AbstractAuditingEntity",
@@ -1120,7 +1120,7 @@
     ]
   },
   {
-    "name": "com.jhipster.demo.blog.domain.User_Accessor_4nyrin",
+    "name": "com.jhipster.demo.blog.domain.User_Accessor_1hwzqk",
     "queryAllPublicConstructors": true,
     "methods": [{ "name": "<init>", "parameterTypes": ["com.jhipster.demo.blog.domain.User"] }]
   },
@@ -2916,6 +2916,9 @@
     "queryAllDeclaredMethods": true
   },
   {
+    "name": "java.lang.StringBuilder"
+  },
+  {
     "name": "java.lang.System",
     "methods": [{ "name": "getSecurityManager", "parameterTypes": [] }]
   },
@@ -2936,6 +2939,9 @@
   },
   {
     "name": "java.lang.Void",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true,
     "fields": [{ "name": "TYPE" }]
   },
   {
@@ -2982,9 +2988,6 @@
       { "name": "lookupClass", "parameterTypes": [] },
       { "name": "lookupModes", "parameterTypes": [] }
     ]
-  },
-  {
-    "name": "java.lang.invoke.StringConcatFactory"
   },
   {
     "name": "java.lang.invoke.TypeDescriptor$OfField",
@@ -3668,10 +3671,21 @@
       { "name": "getReferencesUniqueColumn", "parameterTypes": [] },
       { "name": "getValidate", "parameterTypes": [] },
       { "name": "setBaseColumnNames", "parameterTypes": ["java.lang.String"] },
+      { "name": "setBaseTableCatalogName", "parameterTypes": ["java.lang.String"] },
       { "name": "setBaseTableName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setBaseTableSchemaName", "parameterTypes": ["java.lang.String"] },
       { "name": "setConstraintName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setDeferrable", "parameterTypes": ["java.lang.Boolean"] },
+      { "name": "setDeleteCascade", "parameterTypes": ["java.lang.Boolean"] },
+      { "name": "setInitiallyDeferred", "parameterTypes": ["java.lang.Boolean"] },
+      { "name": "setOnDelete", "parameterTypes": ["java.lang.String"] },
+      { "name": "setOnUpdate", "parameterTypes": ["java.lang.String"] },
       { "name": "setReferencedColumnNames", "parameterTypes": ["java.lang.String"] },
-      { "name": "setReferencedTableName", "parameterTypes": ["java.lang.String"] }
+      { "name": "setReferencedTableCatalogName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setReferencedTableName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setReferencedTableSchemaName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setReferencesUniqueColumn", "parameterTypes": ["java.lang.Boolean"] },
+      { "name": "setValidate", "parameterTypes": ["java.lang.Boolean"] }
     ]
   },
   {
@@ -3716,8 +3730,17 @@
       { "name": "getTableName", "parameterTypes": [] },
       { "name": "getTablespace", "parameterTypes": [] },
       { "name": "getValidate", "parameterTypes": [] },
+      { "name": "setCatalogName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setClustered", "parameterTypes": ["java.lang.Boolean"] },
       { "name": "setColumnNames", "parameterTypes": ["java.lang.String"] },
-      { "name": "setTableName", "parameterTypes": ["java.lang.String"] }
+      { "name": "setConstraintName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setForIndexCatalogName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setForIndexName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setForIndexSchemaName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setSchemaName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setTableName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setTablespace", "parameterTypes": ["java.lang.String"] },
+      { "name": "setValidate", "parameterTypes": ["java.lang.Boolean"] }
     ]
   },
   {
@@ -3792,7 +3815,12 @@
       { "name": "getTableName", "parameterTypes": [] },
       { "name": "getTableType", "parameterTypes": [] },
       { "name": "getTablespace", "parameterTypes": [] },
-      { "name": "setTableName", "parameterTypes": ["java.lang.String"] }
+      { "name": "setCatalogName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setRemarks", "parameterTypes": ["java.lang.String"] },
+      { "name": "setSchemaName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setTableName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setTableType", "parameterTypes": ["java.lang.String"] },
+      { "name": "setTablespace", "parameterTypes": ["java.lang.String"] }
     ]
   },
   {
@@ -3851,8 +3879,10 @@
       { "name": "getColumnName", "parameterTypes": [] },
       { "name": "getSchemaName", "parameterTypes": [] },
       { "name": "getTableName", "parameterTypes": [] },
+      { "name": "setCatalogName", "parameterTypes": ["java.lang.String"] },
       { "name": "setColumnDataType", "parameterTypes": ["java.lang.String"] },
       { "name": "setColumnName", "parameterTypes": ["java.lang.String"] },
+      { "name": "setSchemaName", "parameterTypes": ["java.lang.String"] },
       { "name": "setTableName", "parameterTypes": ["java.lang.String"] }
     ]
   },
@@ -3989,6 +4019,8 @@
     "queryAllPublicMethods": true,
     "methods": [
       { "name": "<init>", "parameterTypes": [] },
+      { "name": "getFile", "parameterTypes": [] },
+      { "name": "getTableName", "parameterTypes": [] },
       { "name": "isRelativeToChangelogFile", "parameterTypes": [] },
       { "name": "setCommentLineStartsWith", "parameterTypes": ["java.lang.String"] },
       { "name": "setFile", "parameterTypes": ["java.lang.String"] },
@@ -4190,11 +4222,63 @@
     "methods": [{ "name": "getWrappedConnection", "parameterTypes": [] }]
   },
   {
+    "name": "liquibase.datatype.core.BigIntType",
+    "queryAllPublicMethods": true,
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "setAutoIncrement", "parameterTypes": ["boolean"] }
+    ]
+  },
+  {
+    "name": "liquibase.datatype.core.BooleanType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.ClobType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.DateTimeType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.DoubleDataTypeSnowflake",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.DoubleType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.IntType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.TextDataTypeSnowflake",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.TimestampNTZTypeSnowflake",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.TimestampType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.datatype.core.VarcharType",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
     "name": "liquibase.executor.ExecutorService",
     "methods": [{ "name": "<init>", "parameterTypes": [] }]
   },
   {
     "name": "liquibase.executor.jvm.JdbcExecutor",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "liquibase.hub.HubServiceFactory",
     "methods": [{ "name": "<init>", "parameterTypes": [] }]
   },
   {
@@ -4242,6 +4326,10 @@
       { "name": "setTestRollbackOnUpdate", "parameterTypes": ["boolean"] },
       { "name": "toString", "parameterTypes": [] }
     ]
+  },
+  {
+    "name": "liquibase.lockservice.StandardLockService",
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
   },
   {
     "name": "liquibase.logging.core.LogServiceFactory",
@@ -4784,34 +4872,6 @@
   {
     "name": "org.h2.jdbc.JdbcLob",
     "methods": [{ "name": "free", "parameterTypes": [] }]
-  },
-  {
-    "name": "org.h2.mvstore.db.LobStorageMap$BlobMeta$Type",
-    "fields": [{ "name": "INSTANCE" }]
-  },
-  {
-    "name": "org.h2.mvstore.db.LobStorageMap$BlobReference$Type",
-    "fields": [{ "name": "INSTANCE" }]
-  },
-  {
-    "name": "org.h2.mvstore.db.NullValueDataType",
-    "fields": [{ "name": "INSTANCE" }]
-  },
-  {
-    "name": "org.h2.mvstore.db.RowDataType$Factory",
-    "methods": [{ "name": "<init>", "parameterTypes": [] }]
-  },
-  {
-    "name": "org.h2.mvstore.tx.VersionedValueType$Factory",
-    "methods": [{ "name": "<init>", "parameterTypes": [] }]
-  },
-  {
-    "name": "org.h2.mvstore.type.ByteArrayDataType",
-    "fields": [{ "name": "INSTANCE" }]
-  },
-  {
-    "name": "org.h2.mvstore.type.LongDataType",
-    "fields": [{ "name": "INSTANCE" }]
   },
   {
     "name": "org.h2.server.ShutdownHandler",
@@ -5417,9 +5477,6 @@
   },
   {
     "name": "org.jooq.DSLContext"
-  },
-  {
-    "name": "org.locationtech.jts.geom.Geometry"
   },
   {
     "name": "org.neo4j.driver.Driver"
@@ -12413,7 +12470,7 @@
     "queryAllPublicMethods": true,
     "methods": [
       { "name": "getPersistentEntity", "parameterTypes": ["java.lang.Class"] },
-      { "name": "getPersistentEntity", "parameterTypes": ["org.springframework.data.util.TypeInformation"] },
+      { "name": "getPersistentEntity", "parameterTypes": ["org.springframework.data.mapping.PersistentProperty"] },
       { "name": "getRequiredPersistentEntity", "parameterTypes": ["java.lang.Class"] },
       { "name": "getRequiredPersistentEntity", "parameterTypes": ["org.springframework.data.mapping.PersistentProperty"] },
       { "name": "getRequiredPersistentEntity", "parameterTypes": ["org.springframework.data.util.TypeInformation"] }
@@ -12936,6 +12993,9 @@
   },
   {
     "name": "org.springframework.http.ResponseEntity$BodyBuilder"
+  },
+  {
+    "name": "org.springframework.http.ResponseEntity$HeadersBuilder"
   },
   {
     "name": "org.springframework.http.codec.CodecConfigurer"

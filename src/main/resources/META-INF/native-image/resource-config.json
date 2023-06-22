@@ -44,7 +44,16 @@
         "pattern": "\\QMETA-INF/services/liquibase.database.Database\\E"
       },
       {
+        "pattern": "\\QMETA-INF/services/liquibase.datatype.LiquibaseDataType\\E"
+      },
+      {
         "pattern": "\\QMETA-INF/services/liquibase.executor.Executor\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/liquibase.hub.HubService\\E"
+      },
+      {
+        "pattern": "\\QMETA-INF/services/liquibase.lockservice.LockService\\E"
       },
       {
         "pattern": "\\QMETA-INF/services/liquibase.logging.LogService\\E"
@@ -177,6 +186,9 @@
       },
       {
         "pattern": "\\Qconfig/liquibase/data/authority.csv\\E"
+      },
+      {
+        "pattern": "\\Qconfig/liquibase/fake-data/blob/hipster.txt\\E"
       },
       {
         "pattern": "\\Qconfig/liquibase/fake-data/blog.csv\\E"

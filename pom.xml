@@ -1234,9 +1234,6 @@
                                     <enabled>true</enabled>
                                 </metadataRepository>
                                 <requiredVersion>22.3</requiredVersion>
-                                <buildArgs>
-                                    <buildArgss>--enable-http</buildArgss>
-                                </buildArgs>
                             </configuration>
                             <executions>
                                 <execution>

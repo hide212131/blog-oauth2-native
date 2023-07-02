@@ -1,0 +1,13 @@
+[
+  {
+    "name": "java.util.HashSet",
+    "allDeclaredFields": true,
+    "allPublicMethods": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "sun.misc.Unsafe",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  }
+]

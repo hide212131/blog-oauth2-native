@@ -1,0 +1,11 @@
+[
+  {
+    "name": "org.hibernate.cache.jcache.internal.JCacheRegionFactory",
+    "queryAllPublicMethods": true,
+    "methods": [{ "name": "<init>", "parameterTypes": [] }]
+  },
+  {
+    "name": "org.hibernate.internal.log.IncubationLogger_$logger",
+    "methods": [{ "name": "<init>", "parameterTypes": ["org.jboss.logging.Logger"] }]
+  }
+]

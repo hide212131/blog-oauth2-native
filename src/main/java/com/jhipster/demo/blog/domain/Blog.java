@@ -1,5 +1,6 @@
 package com.jhipster.demo.blog.domain;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "blog")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@JsonFilter("lazyPropertyFilter")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class Blog implements Serializable {
 

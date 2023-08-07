@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -182,6 +183,11 @@ public class PostResource {
     public ResponseEntity<Post> getPost(@PathVariable("id") Long id) {
         log.debug("REST request to get Post : {}", id);
         Optional<Post> post = postRepository.findOneWithEagerRelationships(id);
+
+        // If I don't do this, for some reason the return value (PersistentSet) of getTags() cannot be materialized.
+        // (The get is done successfully, so no extra SQL is executed when this is done).
+        Hibernate.initialize(post.get().getTags());
+
         return ResponseUtil.wrapOrNotFound(post);
     }
 

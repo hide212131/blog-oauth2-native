@@ -31,7 +31,7 @@ describe('Post Management Component', () => {
                 page: '1',
                 size: '1',
                 sort: 'id,desc',
-              })
+              }),
             ),
             snapshot: { queryParams: {} },
           },
@@ -52,8 +52,8 @@ describe('Post Management Component', () => {
         new HttpResponse({
           body: [{ id: 123 }],
           headers,
-        })
-      )
+        }),
+      ),
     );
   });
 
@@ -106,7 +106,7 @@ describe('Post Management Component', () => {
         queryParams: expect.objectContaining({
           sort: ['name,asc'],
         }),
-      })
+      }),
     );
   });
 

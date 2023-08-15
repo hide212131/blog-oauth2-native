@@ -53,7 +53,7 @@ export class PostFormService {
         {
           nonNullable: true,
           validators: [Validators.required],
-        }
+        },
       ),
       title: new FormControl(postRawValue.title, {
         validators: [Validators.required],
@@ -79,7 +79,7 @@ export class PostFormService {
       {
         ...postRawValue,
         id: { value: postRawValue.id, disabled: true },
-      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */
+      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */,
     );
   }
 
@@ -101,7 +101,7 @@ export class PostFormService {
   }
 
   private convertPostToPostRawValue(
-    post: IPost | (Partial<NewPost> & PostFormDefaults)
+    post: IPost | (Partial<NewPost> & PostFormDefaults),
   ): PostFormRawValue | PartialWithRequiredKeyOf<NewPostFormRawValue> {
     return {
       ...post,

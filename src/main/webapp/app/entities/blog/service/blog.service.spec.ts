@@ -37,7 +37,6 @@ describe('Blog Service', () => {
     });
 
     it('should create a Blog', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const blog = { ...sampleWithNewData };
       const returnedFromService = { ...requireRestSample };
       const expected = { ...sampleWithRequiredData };

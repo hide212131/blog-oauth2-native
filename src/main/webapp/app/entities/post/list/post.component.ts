@@ -8,15 +8,15 @@ import SharedModule from 'app/shared/shared.module';
 import { SortDirective, SortByDirective } from 'app/shared/sort';
 import { DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe } from 'app/shared/date';
 import { FormsModule } from '@angular/forms';
-import { IPost } from '../post.model';
 
 import { ITEMS_PER_PAGE } from 'app/config/pagination.constants';
 import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigation.constants';
-import { EntityArrayResponseType, PostService } from '../service/post.service';
-import { PostDeleteDialogComponent } from '../delete/post-delete-dialog.component';
 import { DataUtils } from 'app/core/util/data-util.service';
 import { ParseLinks } from 'app/core/util/parse-links.service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { PostDeleteDialogComponent } from '../delete/post-delete-dialog.component';
+import { EntityArrayResponseType, PostService } from '../service/post.service';
+import { IPost } from '../post.model';
 
 @Component({
   standalone: true,
@@ -53,7 +53,7 @@ export class PostComponent implements OnInit {
     public router: Router,
     protected parseLinks: ParseLinks,
     protected dataUtils: DataUtils,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
   ) {}
 
   reset(): void {
@@ -88,7 +88,7 @@ export class PostComponent implements OnInit {
     modalRef.closed
       .pipe(
         filter(reason => reason === ITEM_DELETED_EVENT),
-        switchMap(() => this.loadFromBackendWithRouteInformations())
+        switchMap(() => this.loadFromBackendWithRouteInformations()),
       )
       .subscribe({
         next: (res: EntityArrayResponseType) => {
@@ -116,7 +116,7 @@ export class PostComponent implements OnInit {
   protected loadFromBackendWithRouteInformations(): Observable<EntityArrayResponseType> {
     return combineLatest([this.activatedRoute.queryParamMap, this.activatedRoute.data]).pipe(
       tap(([params, data]) => this.fillComponentAttributeFromRoute(params, data)),
-      switchMap(() => this.queryBackend(this.page, this.predicate, this.ascending))
+      switchMap(() => this.queryBackend(this.page, this.predicate, this.ascending)),
     );
   }
 

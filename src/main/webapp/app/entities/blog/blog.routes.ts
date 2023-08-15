@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { ASC } from 'app/config/navigation.constants';
 import { BlogComponent } from './list/blog.component';
 import { BlogDetailComponent } from './detail/blog-detail.component';
 import { BlogUpdateComponent } from './update/blog-update.component';
 import BlogResolve from './route/blog-routing-resolve.service';
-import { ASC } from 'app/config/navigation.constants';
 
 const blogRoute: Routes = [
   {

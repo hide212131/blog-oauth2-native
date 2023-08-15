@@ -7,9 +7,9 @@ import { finalize } from 'rxjs/operators';
 import SharedModule from 'app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { TagFormService, TagFormGroup } from './tag-form.service';
 import { ITag } from '../tag.model';
 import { TagService } from '../service/tag.service';
+import { TagFormService, TagFormGroup } from './tag-form.service';
 
 @Component({
   standalone: true,
@@ -23,7 +23,11 @@ export class TagUpdateComponent implements OnInit {
 
   editForm: TagFormGroup = this.tagFormService.createTagFormGroup();
 
-  constructor(protected tagService: TagService, protected tagFormService: TagFormService, protected activatedRoute: ActivatedRoute) {}
+  constructor(
+    protected tagService: TagService,
+    protected tagFormService: TagFormService,
+    protected activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ tag }) => {

@@ -16,7 +16,10 @@ export type EntityArrayResponseType = HttpResponse<IBlog[]>;
 export class BlogService {
   protected resourceUrl = this.applicationConfigService.getEndpointFor('api/blogs');
 
-  constructor(protected http: HttpClient, protected applicationConfigService: ApplicationConfigService) {}
+  constructor(
+    protected http: HttpClient,
+    protected applicationConfigService: ApplicationConfigService,
+  ) {}
 
   create(blog: NewBlog): Observable<EntityResponseType> {
     return this.http.post<IBlog>(this.resourceUrl, blog, { observe: 'response' });

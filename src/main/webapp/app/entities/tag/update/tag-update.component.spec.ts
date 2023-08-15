@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, Subject, from } from 'rxjs';
 
-import { TagFormService } from './tag-form.service';
 import { TagService } from '../service/tag.service';
 import { ITag } from '../tag.model';
+import { TagFormService } from './tag-form.service';
 
 import { TagUpdateComponent } from './tag-update.component';
 

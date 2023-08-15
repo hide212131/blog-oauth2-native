@@ -77,7 +77,7 @@ describe('User Service', () => {
       });
 
       it('should add only unique User to an array', () => {
-        const userArray: IUser[] = [{ id: 'ABC' }, { id: 'CBA' }, { id: '9dc8b2b4-4faa-4480-8172-bf6269084934' }];
+        const userArray: IUser[] = [{ id: 'ABC' }, { id: 'CBA' }, { id: '9dc8b2b4-4faa-4480-9417-2bf626908493' }];
         const userCollection: IUser[] = [{ id: 'CBA' }];
         expectedResult = service.addUserToCollectionIfMissing(userCollection, ...userArray);
         expect(expectedResult).toHaveLength(3);

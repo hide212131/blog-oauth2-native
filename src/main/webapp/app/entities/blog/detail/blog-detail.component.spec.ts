@@ -18,7 +18,7 @@ describe('Blog Management Detail Component', () => {
               resolve: { blog: () => of({ id: 123 }) },
             },
           ],
-          withComponentInputBinding()
+          withComponentInputBinding(),
         ),
       ],
     })

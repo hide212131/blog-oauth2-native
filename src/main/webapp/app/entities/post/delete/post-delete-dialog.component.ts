@@ -3,9 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import SharedModule from 'app/shared/shared.module';
+import { ITEM_DELETED_EVENT } from 'app/config/navigation.constants';
 import { IPost } from '../post.model';
 import { PostService } from '../service/post.service';
-import { ITEM_DELETED_EVENT } from 'app/config/navigation.constants';
 
 @Component({
   standalone: true,
@@ -15,7 +15,10 @@ import { ITEM_DELETED_EVENT } from 'app/config/navigation.constants';
 export class PostDeleteDialogComponent {
   post?: IPost;
 
-  constructor(protected postService: PostService, protected activeModal: NgbActiveModal) {}
+  constructor(
+    protected postService: PostService,
+    protected activeModal: NgbActiveModal,
+  ) {}
 
   cancel(): void {
     this.activeModal.dismiss();

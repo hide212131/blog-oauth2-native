@@ -6,13 +6,13 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, Subject, from } from 'rxjs';
 
-import { PostFormService } from './post-form.service';
-import { PostService } from '../service/post.service';
-import { IPost } from '../post.model';
 import { IBlog } from 'app/entities/blog/blog.model';
 import { BlogService } from 'app/entities/blog/service/blog.service';
 import { ITag } from 'app/entities/tag/tag.model';
 import { TagService } from 'app/entities/tag/service/tag.service';
+import { IPost } from '../post.model';
+import { PostService } from '../service/post.service';
+import { PostFormService } from './post-form.service';
 
 import { PostUpdateComponent } from './post-update.component';
 
@@ -54,10 +54,10 @@ describe('Post Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Blog query and add missing value', () => {
       const post: IPost = { id: 456 };
-      const blog: IBlog = { id: 15475 };
+      const blog: IBlog = { id: 13869 };
       post.blog = blog;
 
-      const blogCollection: IBlog[] = [{ id: 27446 }];
+      const blogCollection: IBlog[] = [{ id: 31519 }];
       jest.spyOn(blogService, 'query').mockReturnValue(of(new HttpResponse({ body: blogCollection })));
       const additionalBlogs = [blog];
       const expectedCollection: IBlog[] = [...additionalBlogs, ...blogCollection];
@@ -69,17 +69,17 @@ describe('Post Management Update Component', () => {
       expect(blogService.query).toHaveBeenCalled();
       expect(blogService.addBlogToCollectionIfMissing).toHaveBeenCalledWith(
         blogCollection,
-        ...additionalBlogs.map(expect.objectContaining)
+        ...additionalBlogs.map(expect.objectContaining),
       );
       expect(comp.blogsSharedCollection).toEqual(expectedCollection);
     });
 
     it('Should call Tag query and add missing value', () => {
       const post: IPost = { id: 456 };
-      const tags: ITag[] = [{ id: 74082 }];
+      const tags: ITag[] = [{ id: 24275 }];
       post.tags = tags;
 
-      const tagCollection: ITag[] = [{ id: 4353 }];
+      const tagCollection: ITag[] = [{ id: 1426 }];
       jest.spyOn(tagService, 'query').mockReturnValue(of(new HttpResponse({ body: tagCollection })));
       const additionalTags = [...tags];
       const expectedCollection: ITag[] = [...additionalTags, ...tagCollection];
@@ -95,9 +95,9 @@ describe('Post Management Update Component', () => {
 
     it('Should update editForm', () => {
       const post: IPost = { id: 456 };
-      const blog: IBlog = { id: 96604 };
+      const blog: IBlog = { id: 14794 };
       post.blog = blog;
-      const tag: ITag = { id: 81469 };
+      const tag: ITag = { id: 26695 };
       post.tags = [tag];
 
       activatedRoute.data = of({ post });

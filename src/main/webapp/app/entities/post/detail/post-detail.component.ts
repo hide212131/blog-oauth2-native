@@ -3,8 +3,8 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import SharedModule from 'app/shared/shared.module';
 import { DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe } from 'app/shared/date';
-import { IPost } from '../post.model';
 import { DataUtils } from 'app/core/util/data-util.service';
+import { IPost } from '../post.model';
 
 @Component({
   standalone: true,
@@ -15,7 +15,10 @@ import { DataUtils } from 'app/core/util/data-util.service';
 export class PostDetailComponent {
   @Input() post: IPost | null = null;
 
-  constructor(protected dataUtils: DataUtils, protected activatedRoute: ActivatedRoute) {}
+  constructor(
+    protected dataUtils: DataUtils,
+    protected activatedRoute: ActivatedRoute,
+  ) {}
 
   byteSize(base64String: string): string {
     return this.dataUtils.byteSize(base64String);

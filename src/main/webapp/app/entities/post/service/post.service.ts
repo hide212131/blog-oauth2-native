@@ -30,7 +30,10 @@ export type EntityArrayResponseType = HttpResponse<IPost[]>;
 export class PostService {
   protected resourceUrl = this.applicationConfigService.getEndpointFor('api/posts');
 
-  constructor(protected http: HttpClient, protected applicationConfigService: ApplicationConfigService) {}
+  constructor(
+    protected http: HttpClient,
+    protected applicationConfigService: ApplicationConfigService,
+  ) {}
 
   create(post: NewPost): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(post);

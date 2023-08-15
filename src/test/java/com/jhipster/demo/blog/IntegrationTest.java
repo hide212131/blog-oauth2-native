@@ -1,6 +1,5 @@
 package com.jhipster.demo.blog;
 
-import com.jhipster.demo.blog.BlogApp;
 import com.jhipster.demo.blog.config.AsyncSyncConfiguration;
 import com.jhipster.demo.blog.config.EmbeddedSQL;
 import com.jhipster.demo.blog.config.TestSecurityConfiguration;

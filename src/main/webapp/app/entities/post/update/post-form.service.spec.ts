@@ -25,7 +25,7 @@ describe('Post Form Service', () => {
             date: expect.any(Object),
             blog: expect.any(Object),
             tags: expect.any(Object),
-          })
+          }),
         );
       });
 
@@ -40,14 +40,13 @@ describe('Post Form Service', () => {
             date: expect.any(Object),
             blog: expect.any(Object),
             tags: expect.any(Object),
-          })
+          }),
         );
       });
     });
 
     describe('getPost', () => {
       it('should return NewPost for default Post initial value', () => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const formGroup = service.createPostFormGroup(sampleWithNewData);
 
         const post = service.getPost(formGroup) as any;

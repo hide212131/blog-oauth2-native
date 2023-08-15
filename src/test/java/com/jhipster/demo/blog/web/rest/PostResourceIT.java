@@ -25,13 +25,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link PostResource} REST controller.
@@ -243,7 +241,7 @@ class PostResourceIT {
         int databaseSizeBeforeUpdate = postRepository.findAll().size();
 
         // Update the post
-        Post updatedPost = postRepository.findById(post.getId()).get();
+        Post updatedPost = postRepository.findById(post.getId()).orElseThrow();
         // Disconnect from session so that the updates on updatedPost are not directly saved in db
         em.detach(updatedPost);
         updatedPost.title(UPDATED_TITLE).content(UPDATED_CONTENT).date(UPDATED_DATE);
@@ -338,7 +336,7 @@ class PostResourceIT {
         Post partialUpdatedPost = new Post();
         partialUpdatedPost.setId(post.getId());
 
-        partialUpdatedPost.date(UPDATED_DATE);
+        partialUpdatedPost.title(UPDATED_TITLE).content(UPDATED_CONTENT);
 
         restPostMockMvc
             .perform(
@@ -353,9 +351,9 @@ class PostResourceIT {
         List<Post> postList = postRepository.findAll();
         assertThat(postList).hasSize(databaseSizeBeforeUpdate);
         Post testPost = postList.get(postList.size() - 1);
-        assertThat(testPost.getTitle()).isEqualTo(DEFAULT_TITLE);
-        assertThat(testPost.getContent()).isEqualTo(DEFAULT_CONTENT);
-        assertThat(testPost.getDate()).isEqualTo(UPDATED_DATE);
+        assertThat(testPost.getTitle()).isEqualTo(UPDATED_TITLE);
+        assertThat(testPost.getContent()).isEqualTo(UPDATED_CONTENT);
+        assertThat(testPost.getDate()).isEqualTo(DEFAULT_DATE);
     }
 
     @Test

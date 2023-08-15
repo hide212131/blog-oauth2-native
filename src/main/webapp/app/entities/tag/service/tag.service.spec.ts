@@ -37,7 +37,6 @@ describe('Tag Service', () => {
     });
 
     it('should create a Tag', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const tag = { ...sampleWithNewData };
       const returnedFromService = { ...requireRestSample };
       const expected = { ...sampleWithRequiredData };

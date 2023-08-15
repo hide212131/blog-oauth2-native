@@ -3,30 +3,30 @@ import dayjs from 'dayjs/esm';
 import { IPost, NewPost } from './post.model';
 
 export const sampleWithRequiredData: IPost = {
-  id: 27730,
-  title: 'emu state homogeneous',
+  id: 9086,
+  title: 'from drat aide',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2023-06-10T16:51'),
+  date: dayjs('2023-06-10T04:07'),
 };
 
 export const sampleWithPartialData: IPost = {
-  id: 99201,
-  title: 'Operations East Car',
+  id: 19478,
+  title: 'supposing',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2023-06-10T15:00'),
+  date: dayjs('2023-06-10T02:12'),
 };
 
 export const sampleWithFullData: IPost = {
-  id: 15906,
-  title: 'Northeast Mountain Electronics',
+  id: 12763,
+  title: 'gee down ruddy',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2023-06-10T22:00'),
+  date: dayjs('2023-06-09T23:01'),
 };
 
 export const sampleWithNewData: NewPost = {
-  title: 'approach Blues',
+  title: 'as yuck predict',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2023-06-10T13:20'),
+  date: dayjs('2023-06-10T06:54'),
   id: null,
 };
 

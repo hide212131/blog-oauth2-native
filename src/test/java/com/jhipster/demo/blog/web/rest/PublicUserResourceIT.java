@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.jhipster.demo.blog.IntegrationTest;
-import com.jhipster.demo.blog.config.TestSecurityConfiguration;
 import com.jhipster.demo.blog.domain.User;
 import com.jhipster.demo.blog.repository.UserRepository;
 import com.jhipster.demo.blog.security.AuthoritiesConstants;

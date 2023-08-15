@@ -1,7 +1,6 @@
 package com.jhipster.demo.blog.repository;
 
 import com.jhipster.demo.blog.domain.User;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.*;

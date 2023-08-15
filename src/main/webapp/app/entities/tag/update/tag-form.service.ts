@@ -37,7 +37,7 @@ export class TagFormService {
         {
           nonNullable: true,
           validators: [Validators.required],
-        }
+        },
       ),
       name: new FormControl(tagRawValue.name, {
         validators: [Validators.required, Validators.minLength(2)],
@@ -56,7 +56,7 @@ export class TagFormService {
       {
         ...tagRawValue,
         id: { value: tagRawValue.id, disabled: true },
-      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */
+      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */,
     );
   }
 

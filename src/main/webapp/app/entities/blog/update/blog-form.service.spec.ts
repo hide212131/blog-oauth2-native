@@ -23,7 +23,7 @@ describe('Blog Form Service', () => {
             name: expect.any(Object),
             handle: expect.any(Object),
             user: expect.any(Object),
-          })
+          }),
         );
       });
 
@@ -36,14 +36,13 @@ describe('Blog Form Service', () => {
             name: expect.any(Object),
             handle: expect.any(Object),
             user: expect.any(Object),
-          })
+          }),
         );
       });
     });
 
     describe('getBlog', () => {
       it('should return NewBlog for default Blog initial value', () => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const formGroup = service.createBlogFormGroup(sampleWithNewData);
 
         const blog = service.getBlog(formGroup) as any;

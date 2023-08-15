@@ -20,7 +20,7 @@ export const blogResolve = (route: ActivatedRouteSnapshot): Observable<null | IB
             inject(Router).navigate(['404']);
             return EMPTY;
           }
-        })
+        }),
       );
   }
   return of(null);

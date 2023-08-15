@@ -22,7 +22,7 @@ describe('Post Management Detail Component', () => {
               resolve: { post: () => of({ id: 123 }) },
             },
           ],
-          withComponentInputBinding()
+          withComponentInputBinding(),
         ),
       ],
     })

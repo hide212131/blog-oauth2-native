@@ -7,9 +7,6 @@ import { finalize, map } from 'rxjs/operators';
 import SharedModule from 'app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { PostFormService, PostFormGroup } from './post-form.service';
-import { IPost } from '../post.model';
-import { PostService } from '../service/post.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { EventManager, EventWithContent } from 'app/core/util/event-manager.service';
 import { DataUtils, FileLoadError } from 'app/core/util/data-util.service';
@@ -17,6 +14,9 @@ import { IBlog } from 'app/entities/blog/blog.model';
 import { BlogService } from 'app/entities/blog/service/blog.service';
 import { ITag } from 'app/entities/tag/tag.model';
 import { TagService } from 'app/entities/tag/service/tag.service';
+import { PostService } from '../service/post.service';
+import { IPost } from '../post.model';
+import { PostFormService, PostFormGroup } from './post-form.service';
 
 @Component({
   standalone: true,
@@ -40,7 +40,7 @@ export class PostUpdateComponent implements OnInit {
     protected postFormService: PostFormService,
     protected blogService: BlogService,
     protected tagService: TagService,
-    protected activatedRoute: ActivatedRoute
+    protected activatedRoute: ActivatedRoute,
   ) {}
 
   compareBlog = (o1: IBlog | null, o2: IBlog | null): boolean => this.blogService.compareBlog(o1, o2);

@@ -38,7 +38,6 @@ describe('Post Service', () => {
     });
 
     it('should create a Post', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const post = { ...sampleWithNewData };
       const returnedFromService = { ...requireRestSample };
       const expected = { ...sampleWithRequiredData };

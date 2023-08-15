@@ -16,7 +16,10 @@ export type EntityArrayResponseType = HttpResponse<ITag[]>;
 export class TagService {
   protected resourceUrl = this.applicationConfigService.getEndpointFor('api/tags');
 
-  constructor(protected http: HttpClient, protected applicationConfigService: ApplicationConfigService) {}
+  constructor(
+    protected http: HttpClient,
+    protected applicationConfigService: ApplicationConfigService,
+  ) {}
 
   create(tag: NewTag): Observable<EntityResponseType> {
     return this.http.post<ITag>(this.resourceUrl, tag, { observe: 'response' });

@@ -1,26 +1,26 @@
 import { IBlog, NewBlog } from './blog.model';
 
 export const sampleWithRequiredData: IBlog = {
-  id: 67370,
-  name: 'East World Bicycle',
-  handle: 'Reggae Credit Southwest',
+  id: 22076,
+  name: 'phew but ew',
+  handle: 'outside below drat',
 };
 
 export const sampleWithPartialData: IBlog = {
-  id: 44786,
-  name: 'black ew synthesizing',
-  handle: 'Mariela Music',
+  id: 11734,
+  name: 'super with',
+  handle: 'hunter',
 };
 
 export const sampleWithFullData: IBlog = {
-  id: 9545,
-  name: 'engage Southwest',
-  handle: 'withdrawal District',
+  id: 27582,
+  name: 'because admirable',
+  handle: 'until',
 };
 
 export const sampleWithNewData: NewBlog = {
-  name: 'Tuna painfully Audi',
-  handle: 'transmit',
+  name: 'judgementally',
+  handle: 'where',
   id: null,
 };
 

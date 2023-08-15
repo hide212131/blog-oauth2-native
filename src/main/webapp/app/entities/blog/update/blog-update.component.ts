@@ -7,11 +7,11 @@ import { finalize, map } from 'rxjs/operators';
 import SharedModule from 'app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { BlogFormService, BlogFormGroup } from './blog-form.service';
-import { IBlog } from '../blog.model';
-import { BlogService } from '../service/blog.service';
 import { IUser } from 'app/entities/user/user.model';
 import { UserService } from 'app/entities/user/user.service';
+import { IBlog } from '../blog.model';
+import { BlogService } from '../service/blog.service';
+import { BlogFormService, BlogFormGroup } from './blog-form.service';
 
 @Component({
   standalone: true,
@@ -31,7 +31,7 @@ export class BlogUpdateComponent implements OnInit {
     protected blogService: BlogService,
     protected blogFormService: BlogFormService,
     protected userService: UserService,
-    protected activatedRoute: ActivatedRoute
+    protected activatedRoute: ActivatedRoute,
   ) {}
 
   compareUser = (o1: IUser | null, o2: IUser | null): boolean => this.userService.compareUser(o1, o2);

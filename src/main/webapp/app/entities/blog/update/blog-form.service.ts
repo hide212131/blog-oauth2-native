@@ -38,7 +38,7 @@ export class BlogFormService {
         {
           nonNullable: true,
           validators: [Validators.required],
-        }
+        },
       ),
       name: new FormControl(blogRawValue.name, {
         validators: [Validators.required, Validators.minLength(3)],
@@ -60,7 +60,7 @@ export class BlogFormService {
       {
         ...blogRawValue,
         id: { value: blogRawValue.id, disabled: true },
-      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */
+      } as any /* cast to workaround https://github.com/angular/angular/issues/46458 */,
     );
   }
 

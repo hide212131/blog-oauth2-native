@@ -20,7 +20,7 @@ export const tagResolve = (route: ActivatedRouteSnapshot): Observable<null | ITa
             inject(Router).navigate(['404']);
             return EMPTY;
           }
-        })
+        }),
       );
   }
   return of(null);

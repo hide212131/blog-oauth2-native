@@ -180,7 +180,7 @@ class TagResourceIT {
         int databaseSizeBeforeUpdate = tagRepository.findAll().size();
 
         // Update the tag
-        Tag updatedTag = tagRepository.findById(tag.getId()).get();
+        Tag updatedTag = tagRepository.findById(tag.getId()).orElseThrow();
         // Disconnect from session so that the updates on updatedTag are not directly saved in db
         em.detach(updatedTag);
         updatedTag.name(UPDATED_NAME);
@@ -273,6 +273,8 @@ class TagResourceIT {
         Tag partialUpdatedTag = new Tag();
         partialUpdatedTag.setId(tag.getId());
 
+        partialUpdatedTag.name(UPDATED_NAME);
+
         restTagMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedTag.getId())
@@ -286,7 +288,7 @@ class TagResourceIT {
         List<Tag> tagList = tagRepository.findAll();
         assertThat(tagList).hasSize(databaseSizeBeforeUpdate);
         Tag testTag = tagList.get(tagList.size() - 1);
-        assertThat(testTag.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testTag.getName()).isEqualTo(UPDATED_NAME);
     }
 
     @Test

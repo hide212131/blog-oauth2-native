@@ -18,7 +18,7 @@ describe('Tag Management Detail Component', () => {
               resolve: { tag: () => of({ id: 123 }) },
             },
           ],
-          withComponentInputBinding()
+          withComponentInputBinding(),
         ),
       ],
     })

@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { ASC } from 'app/config/navigation.constants';
 import { TagComponent } from './list/tag.component';
 import { TagDetailComponent } from './detail/tag-detail.component';
 import { TagUpdateComponent } from './update/tag-update.component';
 import TagResolve from './route/tag-routing-resolve.service';
-import { ASC } from 'app/config/navigation.constants';
 
 const tagRoute: Routes = [
   {

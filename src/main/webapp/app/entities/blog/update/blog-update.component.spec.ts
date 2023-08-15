@@ -6,12 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, Subject, from } from 'rxjs';
 
-import { BlogFormService } from './blog-form.service';
+import { IUser } from 'app/entities/user/user.model';
+import { UserService } from 'app/entities/user/user.service';
 import { BlogService } from '../service/blog.service';
 import { IBlog } from '../blog.model';
 
-import { IUser } from 'app/entities/user/user.model';
-import { UserService } from 'app/entities/user/user.service';
+import { BlogFormService } from './blog-form.service';
 
 import { BlogUpdateComponent } from './blog-update.component';
 
@@ -51,10 +51,10 @@ describe('Blog Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call User query and add missing value', () => {
       const blog: IBlog = { id: 456 };
-      const user: IUser = { id: '14d527dc-24a8-4a47-b7a2-c65b0d0ffeb9' };
+      const user: IUser = { id: '14d527dc-24a8-4a47-a37a-2c65b0d0ffeb' };
       blog.user = user;
 
-      const userCollection: IUser[] = [{ id: 'b2f34a10-5d30-43db-83f5-bd75b6bfa6ef' }];
+      const userCollection: IUser[] = [{ id: 'b2f34a10-5d30-43db-b83f-5bd75b6bfa6e' }];
       jest.spyOn(userService, 'query').mockReturnValue(of(new HttpResponse({ body: userCollection })));
       const additionalUsers = [user];
       const expectedCollection: IUser[] = [...additionalUsers, ...userCollection];
@@ -66,14 +66,14 @@ describe('Blog Management Update Component', () => {
       expect(userService.query).toHaveBeenCalled();
       expect(userService.addUserToCollectionIfMissing).toHaveBeenCalledWith(
         userCollection,
-        ...additionalUsers.map(expect.objectContaining)
+        ...additionalUsers.map(expect.objectContaining),
       );
       expect(comp.usersSharedCollection).toEqual(expectedCollection);
     });
 
     it('Should update editForm', () => {
       const blog: IBlog = { id: 456 };
-      const user: IUser = { id: 'e52b0689-7ef1-4954-b551-57e05dd1d6be' };
+      const user: IUser = { id: 'e52b0689-7ef1-4954-bf55-157e05dd1d6b' };
       blog.user = user;
 
       activatedRoute.data = of({ blog });

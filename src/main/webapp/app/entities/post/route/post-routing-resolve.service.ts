@@ -20,7 +20,7 @@ export const postResolve = (route: ActivatedRouteSnapshot): Observable<null | IP
             inject(Router).navigate(['404']);
             return EMPTY;
           }
-        })
+        }),
       );
   }
   return of(null);

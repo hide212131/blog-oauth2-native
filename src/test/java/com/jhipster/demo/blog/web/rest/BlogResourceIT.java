@@ -23,7 +23,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -234,7 +233,7 @@ class BlogResourceIT {
         int databaseSizeBeforeUpdate = blogRepository.findAll().size();
 
         // Update the blog
-        Blog updatedBlog = blogRepository.findById(blog.getId()).get();
+        Blog updatedBlog = blogRepository.findById(blog.getId()).orElseThrow();
         // Disconnect from session so that the updates on updatedBlog are not directly saved in db
         em.detach(updatedBlog);
         updatedBlog.name(UPDATED_NAME).handle(UPDATED_HANDLE);
@@ -328,6 +327,8 @@ class BlogResourceIT {
         Blog partialUpdatedBlog = new Blog();
         partialUpdatedBlog.setId(blog.getId());
 
+        partialUpdatedBlog.name(UPDATED_NAME).handle(UPDATED_HANDLE);
+
         restBlogMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedBlog.getId())
@@ -341,8 +342,8 @@ class BlogResourceIT {
         List<Blog> blogList = blogRepository.findAll();
         assertThat(blogList).hasSize(databaseSizeBeforeUpdate);
         Blog testBlog = blogList.get(blogList.size() - 1);
-        assertThat(testBlog.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testBlog.getHandle()).isEqualTo(DEFAULT_HANDLE);
+        assertThat(testBlog.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testBlog.getHandle()).isEqualTo(UPDATED_HANDLE);
     }
 
     @Test

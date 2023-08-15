@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
+import { ASC } from 'app/config/navigation.constants';
 import { PostComponent } from './list/post.component';
 import { PostDetailComponent } from './detail/post-detail.component';
 import { PostUpdateComponent } from './update/post-update.component';
 import PostResolve from './route/post-routing-resolve.service';
-import { ASC } from 'app/config/navigation.constants';
 
 const postRoute: Routes = [
   {

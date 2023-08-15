@@ -22,7 +22,7 @@ describe('Tag Form Service', () => {
             id: expect.any(Object),
             name: expect.any(Object),
             entries: expect.any(Object),
-          })
+          }),
         );
       });
 
@@ -34,14 +34,13 @@ describe('Tag Form Service', () => {
             id: expect.any(Object),
             name: expect.any(Object),
             entries: expect.any(Object),
-          })
+          }),
         );
       });
     });
 
     describe('getTag', () => {
       it('should return NewTag for default Tag initial value', () => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const formGroup = service.createTagFormGroup(sampleWithNewData);
 
         const tag = service.getTag(formGroup) as any;

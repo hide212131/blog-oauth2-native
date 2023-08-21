@@ -198,8 +198,8 @@ jhipster:
   mail:
     from: blog@localhost
   api-docs:
-    default-include-pattern: ${server.servlet.context-path:}/api/**
-    management-include-pattern: ${server.servlet.context-path:}/management/**
+    default-include-pattern: /api/**
+    management-include-pattern: /management/**
     title: Blog API
     description: Blog API documentation
     version: 0.0.1
